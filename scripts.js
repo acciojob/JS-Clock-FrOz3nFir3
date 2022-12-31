@@ -9,15 +9,17 @@ function updateTime() {
   const currentDate = new Date();
 
   const hours = currentDate.getHours();
-  const hoursDegrees = (hours / 12) * 360 + 90;
+  const minutes = currentDate.getMinutes();
+
+  // referenced ukdgit repository (although clock was working 100% the test cases aren't passing)
+  const hoursDegrees = 30 * hours + minutes / 2;;
   hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
-  const minutes = currentDate.getMinutes();
-  const minutesDegrees = (minutes / 60) * 360 + 90;
+  const minutesDegrees = 6 * minutes;
   minutesHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
   const seconds = currentDate.getSeconds();
-  const secondsDegrees = (seconds / 60) * 360 + 90;
+  const secondsDegrees = 6 * seconds;
   secondsHand.style.transform = `rotate(${secondsDegrees}deg)`;
 }
 
