@@ -3,7 +3,6 @@ const hoursHand = clock.querySelector(".hour-hand");
 const minutesHand = clock.querySelector(".min-hand");
 const secondsHand = clock.querySelector(".second-hand");
 
-updateTime();
 
 function updateTime() {
   const currentDate = new Date();
@@ -25,3 +24,4 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000);
+updateTime();
